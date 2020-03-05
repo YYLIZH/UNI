@@ -12,7 +12,7 @@ def run(leftupPos, rightdownPos):
     New_rightdownPos = [rightdownPos[0] - int(x * 153 / 722), rightdownPos[1] - int(y * 169 / 406)]
 
     imgdect = videoinput.windowCapture(New_leftupPos, New_rightdownPos)
-    _,position = videoprocess.find_note(imgdect)
+    _,position = videoprocess.find_note(np.copy(imgdect))
     objList=[]
     for i in position:
         obj=object_track.note()
@@ -24,7 +24,7 @@ def run(leftupPos, rightdownPos):
 
     while True:
         imgdect = videoinput.windowCapture(New_leftupPos,New_rightdownPos)
-        im, position = videoprocess.find_note(imgdect)
+        im, position = videoprocess.find_note(np.copy(imgdect))
         Notelist.update(position)
         cv2.imshow('imm', im)
         if cv2.waitKey(1) & 0xFF == ord('q'):
