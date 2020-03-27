@@ -3,8 +3,7 @@ import win32ui
 import win32con
 import cv2
 import numpy as np
-import os
-from matplotlib import pyplot as plt
+
 
 
 def windowCapture(leftupPos,rightdownPos):

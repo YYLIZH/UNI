@@ -1,5 +1,13 @@
 import os
 import pyautogui
+import cv2
+
+
+print('Please resize the window as this cute Kawada picture')
+img = cv2.imread('kawada.jpg')
+cv2.imshow('image', img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 
 def SystemSetup():
@@ -38,7 +46,9 @@ def SystemSetup():
 
 
 leftupPos,  rightdownPos = SystemSetup()
-print(leftupPos, rightdownPos)
+print('The upper left position is: ', leftupPos)
+print('\n')
+print('The lower right position is: ', rightdownPos)
 
 '''
 PosList, dePosList, leftupPos, rightdownPos = SystemSetup()
